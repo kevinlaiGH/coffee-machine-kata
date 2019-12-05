@@ -8,6 +8,9 @@ const ordering = (input) => {
     if ("H::" === input){
         return "Drink maker makes 1 chocolate"
     }
+    if ("T::" === input){
+        return "Drink maker makes 1 tea"
+    }
 
 }
 

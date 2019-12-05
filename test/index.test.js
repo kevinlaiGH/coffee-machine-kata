@@ -38,4 +38,13 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
+    it('should return "Drink maker makes 1 tea" when "T::" is passed', function () {
+        // Given
+        const input = "T::"
+        const expected = "Drink maker makes 1 tea"
+        // When
+        const result = ordering(input)
+        // Then
+        assert.equal(result, expected)
+    });
 })
