@@ -11,6 +11,9 @@ const ordering = (input) => {
     if ("T::" === input){
         return "Drink maker makes 1 tea"
     }
+    if ("T:1:0" === input){
+        return "Drink maker makes 1 tea, 1 sugar and 1 stick"
+    }
 
 }
 
