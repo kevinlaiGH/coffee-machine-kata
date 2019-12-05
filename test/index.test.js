@@ -11,4 +11,13 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     })
+    it('should return "Drink maker makes 1 coffee" when "C::" is passed', function () {
+        // Given
+        const input = "C::"
+        const expected = "Drink maker makes 1 coffee"
+        // When
+        const result = ordering(input)
+        // Then
+        assert.equal(result, expected)
+    });
 })
