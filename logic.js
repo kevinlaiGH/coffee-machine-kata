@@ -5,6 +5,9 @@ const ordering = (input) => {
     if ("C::" === input){
         return "Drink maker makes 1 coffee"
     }
+    if ("H::" === input){
+        return "Drink maker makes 1 chocolate"
+    }
 
 }
 
