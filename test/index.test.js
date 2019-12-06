@@ -47,4 +47,13 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
+    it('should return "Drink maker makes 1 chocolate, 2 sugar and 1 stick" when "H:2:0" is passed', function () {
+        // Given
+        const input = "H:2:0"
+        const expected = "Drink maker makes 1 chocolate, 2 sugar and 1 stick"
+        // When
+        const result = ordering(input)
+        // Then
+        assert.equal(result, expected)
+    });
 })
