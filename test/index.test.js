@@ -1,5 +1,6 @@
 const assert = require('assert');
 const ordering = require('../logic.js').ordering;
+const messaging = require('../logic.js').messaging;
 
 describe('#ordering()', function () {
     it('should return "Drink maker makes nothing" when "" is passed', function () {
@@ -53,6 +54,15 @@ describe('#ordering()', function () {
         const expected = "Drink maker makes 1 chocolate, 2 sugar and 1 stick"
         // When
         const result = ordering(input)
+        // Then
+        assert.equal(result, expected)
+    });
+    it('should return "helloworld" when "M:helloworld" is passed', function () {
+        // Given
+        const input = "M:helloworld"
+        const expected = "Drink maker forwards helloworld"
+        // When
+        const result = messaging(input)
         // Then
         assert.equal(result, expected)
     });
