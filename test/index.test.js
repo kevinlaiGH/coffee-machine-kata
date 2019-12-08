@@ -57,6 +57,19 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
+
+})
+
+describe('#messaging()', function () {
+    it('should return "" when "" is passed', function () {
+        // Given
+        const input = ""
+        const expected = "Drink maker forwards nothing"
+        // When
+        const result = messaging(input)
+        // Then
+        assert.equal(result, expected)
+    });
     it('should return "helloworld" when "M:helloworld" is passed', function () {
         // Given
         const input = "M:helloworld"
@@ -67,3 +80,5 @@ describe('#ordering()', function () {
         assert.equal(result, expected)
     });
 })
+
+

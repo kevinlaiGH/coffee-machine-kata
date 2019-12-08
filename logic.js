@@ -28,6 +28,10 @@ const ordering = (input) => {
 }
 
 const messaging = (msg) => {
+
+    if ("" === msg){
+        return "Drink maker forwards nothing"
+    }
     let splitMsg = msg.split("")
     let msg1= msg.split("")[0]
     let msg2= msg.split("")[1]
@@ -37,10 +41,6 @@ const messaging = (msg) => {
         return `Drink maker forwards ${lastFewItems.join("")}`
     }
 }
-
-zz = messaging("M:helloworld")
-console.log(zz)
-
 
 
 module.exports = {
