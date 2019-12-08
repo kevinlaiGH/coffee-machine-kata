@@ -2,7 +2,7 @@
   "name": "coffee-machine-kata",
   "version": "1.0.0",
   "description": "",
-  "main": "logic.js",
+  "main": "making-drinks.js",
   "scripts": {
     "test": "mocha"
   },
