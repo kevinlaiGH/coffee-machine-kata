@@ -83,6 +83,16 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
+    it('should return "Drink maker makes 1 extra hot coffee" when "Ch::" and 0.6 are passed', function () {
+        // Given
+        const input = "Ch::"
+        const givenAmount = 0.6
+        const expected = "Drink maker makes 1 extra hot coffee"
+        // When
+        const result = ordering(input, givenAmount)
+        // Then
+        assert.equal(result, expected)
+    });
 
 
 })
