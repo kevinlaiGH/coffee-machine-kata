@@ -13,7 +13,7 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     })
-    it('should return "Drink maker makes 1 coffee" when "C::" is passed', function () {
+    it('should return "Drink maker makes 1 coffee" when "C::" and 0.6 are passed', function () {
         // Given
         const input = "C::"
         const givenAmount = 0.6
@@ -23,7 +23,7 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
-    it('should return "Drink maker makes 1 chocolate" when "H::" is passed', function () {
+    it('should return "Drink maker makes 1 chocolate" when "H::" and 0.5 are passed', function () {
         // Given
         const input = "H::"
         const givenAmount = 0.5
@@ -33,7 +33,17 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
-    it('should return "Drink maker makes 1 tea" when "T::" is passed', function () {
+    it('should return "Drink maker makes 1 orange juice" when "O::" and 0.6 are passed', function () {
+        // Given
+        const input = "O::"
+        const givenAmount = 0.6
+        const expected = "Drink maker makes 1 orange juice"
+        // When
+        const result = ordering(input, givenAmount)
+        // Then
+        assert.equal(result, expected)
+    });
+    it('should return "Drink maker makes 1 tea" when "T::" and 0.4 are passed', function () {
         // Given
         const input = "T::"
         const givenAmount = 0.4
@@ -43,7 +53,7 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
-    it('should return "Drink maker makes 1 tea, 1 sugar and 1 stick" when "T:1:0" is passed', function () {
+    it('should return "Drink maker makes 1 tea, 1 sugar and 1 stick" when "T:1:0" and 0.4 is passed', function () {
         // Given
         const input = "T:1:0"
         const givenAmount =  0.4
@@ -53,7 +63,7 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
-    it('should return "Drink maker makes 1 chocolate, 2 sugar and 1 stick" when "H:2:0" is passed', function () {
+    it('should return "Drink maker makes 1 chocolate, 2 sugar and 1 stick" when "H:2:0" and 0.5 are passed', function () {
         // Given
         const input = "H:2:0"
         const givenAmount = 0.5
@@ -63,7 +73,7 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
-    it('should return "Missing 0.1" when "H:2:0" is passed', function () {
+    it('should return "Missing 0.1" when "H:2:0" and 0.4 are passed', function () {
         // Given
         const input = "H:2:0"
         const givenAmount = 0.4
@@ -73,6 +83,7 @@ describe('#ordering()', function () {
         // Then
         assert.equal(result, expected)
     });
+
 
 })
 
