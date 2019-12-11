@@ -6,17 +6,10 @@ const ordering = (input, givenAmount) => {
     let splitByColon = input.split(":")
     let [sugarQuantity,stick]= [ splitByColon[1], splitByColon[2]]
 
-    let isHot =  splitByColon[0].split("")
+    let codeAndHot =  splitByColon[0].split("")
+    let [code, hot] = [codeAndHot[0], codeAndHot[1]]
 
-    const getProdCode = () => {
-        return isHot[0]
-    }
-    const extraHot = () => {
-        if (isHot[1] === "h"){
-            return `extra hot`
-        }
-        return ``
-    }
+    const extraHot = () => hot === "h" ? ' extra hot' : '';
 
     const dict = {
         "C": {product: "coffee", price: 0.6},
@@ -25,44 +18,26 @@ const ordering = (input, givenAmount) => {
         "O": {product: "orange juice", price: 0.6}
     }
 
-    // let report ={
-    //     "C": {sold: 0, price: 0.6},
-    //     "H": {sold: 0, price: 0.5},
-    //     "T": {sold: 0, price: 0.4},
-    //     "O": {sold: 0, price: 0.6}
-    // }
-
     const sugarRequirements =  sugarQuantity > 0 && sugarQuantity < 3
-
-    const productCodeExist = dict.hasOwnProperty("C") || dict.hasOwnProperty("H") || dict.hasOwnProperty("T") ||  dict.hasOwnProperty("O")
+    const productCodeExist = dict.hasOwnProperty(code)
 
     if (productCodeExist === true && sugarRequirements === true && stick === "0"){
-        if (givenAmount >= dict[getProdCode()]["price"]){
+        if (givenAmount >= dict[code]["price"]){
             // report[getProdCode()]["sold"] += 1
-            if (isHot[1] === "h"){
-                return `Drink maker makes 1 ${extraHot()} ${dict[getProdCode()]["product"]}, ${sugarQuantity} sugar and 1 stick`
-            }
-            return `Drink maker makes 1 ${dict[getProdCode()]["product"]}, ${sugarQuantity} sugar and 1 stick`
+            return `Drink maker makes 1${extraHot()} ${dict[code]["product"]}, ${sugarQuantity} sugar and 1 stick`
         }
-        let amountReceivable = (dict[getProdCode()]["price"] - givenAmount).toFixed(1)
+        let amountReceivable = (dict[code]["price"] - givenAmount).toFixed(1)
         return `Missing ${amountReceivable}`
     }
 
     if (productCodeExist === true){
-        if (givenAmount >= dict[getProdCode()]["price"]){
+        if (givenAmount >= dict[code]["price"]){
             // report[getProdCode()]["sold"] += 1
-            if (isHot[1] === "h"){
-                return `Drink maker makes 1 ${extraHot()} ${dict[getProdCode()]["product"]}`
-            }
-            return `Drink maker makes 1 ${dict[getProdCode()]["product"]}`
+            return `Drink maker makes 1${extraHot()} ${dict[code]["product"]}`
         }
-        let amountReceivable = (dict[getProdCode()]["price"] - givenAmount).toFixed(1)
+        let amountReceivable = (dict[code]["price"] - givenAmount).toFixed(1)
         return `Missing ${amountReceivable}`
     }
-
-
-
-
 }
 
 const messaging = (msg) => {
@@ -78,8 +53,8 @@ const messaging = (msg) => {
     }
 }
 
-zz = ordering("Ch:2:0",0.4)
-console.log(zz)
+// zz = ordering("Ch:2:0",0.4)
+// console.log(zz)
 
 module.exports = {
     ordering, messaging

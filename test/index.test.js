@@ -1,7 +1,6 @@
 const assert = require('assert');
 const ordering = require('../making-drinks.js').ordering;
 const messaging = require('../making-drinks.js').messaging;
-// const moneycheck = require('../business.js').moneycheck;
 
 describe('#ordering()', function () {
     it('should return "Drink maker makes nothing" when "" is passed', function () {
@@ -94,8 +93,12 @@ describe('#ordering()', function () {
         assert.equal(result, expected)
     });
 
-
+    // Given all of the inputs entered before
+    // When management wants to have daily reports of what is sold and the total amount of money earned so far
+    // Then the report should give back how many drink was sold and the total amount of money earned so far
 })
+
+
 
 describe('#messaging()', function () {
     it('should return "" when "" is passed', function () {
@@ -118,17 +121,5 @@ describe('#messaging()', function () {
     });
 })
 
-// describe('#moneycheck()', function () {
-//     it('should return "" when "" is passed', function () {
-//         // Given
-//         const input = ""
-//         const expected = "Drink maker forwards nothing"
-//         // When
-//         const result = messaging(input)
-//         // Then
-//         assert.equal(result, expected)
-//     });
-//
-// })
 
 
