@@ -93,6 +93,21 @@ describe('#ordering()', function () {
         assert.equal(result, expected)
     });
 
+    it('should return "____" when "___" are passed', function () {
+        // Given
+        const tests = [
+            {args: [1, 2], expected: 3},
+            {args: [1, 2, 3], expected: 6},
+            {args: [1, 2, 3, 4], expected: 10}
+        ];
+        const givenAmount = 0.6
+        const expected = "Drink maker makes 1 extra hot coffee"
+        // When
+        const result = ordering(input, givenAmount)
+        // Then
+        assert.equal(result, expected)
+    });
+
     // Given all of the inputs entered before
     // When management wants to have daily reports of what is sold and the total amount of money earned so far
     // Then the report should give back how many drink was sold and the total amount of money earned so far
